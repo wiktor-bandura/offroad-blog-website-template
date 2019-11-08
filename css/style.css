@@ -1,0 +1,501 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@-webkit-keyframes slide-in-title {
+  from {
+    -webkit-transform: translateX(-250%);
+            transform: translateX(-250%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-title {
+  from {
+    -webkit-transform: translateX(-250%);
+            transform: translateX(-250%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("./img/background1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Photo by NeONBRAND on Unsplash */
+  overflow-x: hidden;
+}
+
+.banner {
+  height: 100vh;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.banner h1 {
+  font-size: 72px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.banner .first {
+  -webkit-animation: slide-in-title 0.6s ease-in-out;
+          animation: slide-in-title 0.6s ease-in-out;
+}
+
+.banner .second {
+  -webkit-animation: slide-in-title 0.8s ease-in-out;
+          animation: slide-in-title 0.8s ease-in-out;
+}
+
+.banner .third {
+  -webkit-animation: slide-in-title 1s ease-in-out;
+          animation: slide-in-title 1s ease-in-out;
+}
+
+.banner .fourth {
+  -webkit-animation: slide-in-title 1.2s ease-in-out;
+          animation: slide-in-title 1.2s ease-in-out;
+}
+
+.hamburger-box {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hamburger-box .hamburger-btn {
+  width: 50px;
+  height: 4px;
+  background: #414141;
+  position: relative;
+}
+
+.hamburger-box .hamburger-btn::before,
+.hamburger-box .hamburger-btn::after {
+  content: '';
+  width: 50px;
+  height: 4px;
+  position: absolute;
+  background: #414141;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.hamburger-box .hamburger-btn::before {
+  top: -15px;
+}
+
+.hamburger-box .hamburger-btn::after {
+  top: 15px;
+}
+
+.hamburger-box:hover .hamburger-btn::before,
+.hamburger-box:hover .hamburger-btn::after {
+  width: 35px;
+  right: 0;
+}
+
+.menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #414141;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+}
+
+.menu .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.menu .close .cross {
+  width: 50px;
+  height: 4px;
+  background: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.menu .close .cross::before {
+  position: absolute;
+  content: '';
+  width: 50px;
+  height: 4px;
+  background: white;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.menu .close:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu ul {
+  list-style: none;
+  z-index: 1;
+}
+
+.menu ul li {
+  padding: 20px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.visible {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.about {
+  width: 100vw;
+  height: 70vh;
+  background: white;
+  -webkit-box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+}
+
+.about .box-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.about .box-wrapper .left {
+  background: url("./img//background.jpg") no-repeat;
+  /* Photo by NeONBRAND on Unsplash */
+  background-position: right;
+  background-size: cover;
+}
+
+.about .box-wrapper .right {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.about .box-wrapper .right p {
+  font-size: 25px;
+}
+
+.tutorials {
+  width: 100vw;
+  height: 80vh;
+  margin-top: 30vh;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+}
+
+.tutorials .tutorials-wrapper {
+  width: 90%;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-rows: (1fr)[auto-fit];
+      grid-template-rows: repeat(auto-fit, 1fr);
+  grid-gap: 25px;
+}
+
+.tutorials .tutorials-wrapper .tutorial-box {
+  background: #a7a7a7;
+  padding: 30px;
+  border: 1px solid #414141;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.tutorials .tutorials-wrapper .tutorial-box h3 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.tutorials .tutorials-wrapper .tutorial-box:hover {
+  background-color: #414141;
+  color: white;
+}
+
+.contact-wrapper {
+  padding: 20% 0;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 30vh;
+  background: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 172px -90px rgba(0, 0, 0, 0.75);
+}
+
+.contact-wrapper .socials {
+  width: 70%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.contact-wrapper .socials .socials-icons {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-wrapper .socials .socials-icons img {
+  margin: 20px;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+
+.contact-wrapper .socials .socials-icons img:hover {
+  cursor: pointer;
+}
+
+.contact-wrapper .contact {
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-wrapper .contact h1 {
+  text-align: center;
+}
+
+.contact-wrapper .contact .contact-form-box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.contact-wrapper .contact .contact-form-box form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-wrapper .contact .contact-form-box form input,
+.contact-wrapper .contact .contact-form-box form textarea {
+  width: 300px;
+  padding: 15px 10px;
+  font-size: 18px;
+  margin: 15px 0;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  text-align: center;
+}
+
+.contact-wrapper .contact .contact-form-box form textarea {
+  resize: none;
+}
+
+.contact-wrapper .contact .contact-form-box form input:focus,
+.contact-wrapper .contact .contact-form-box form textarea:focus {
+  background: #f4f4f4;
+}
+
+.contact-wrapper .contact .contact-form-box form input[type=submit] {
+  border: none;
+  background: #a7a7a7;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.contact-wrapper .contact .contact-form-box form input[type=submit]:hover {
+  background: #414141;
+  color: #a7a7a7;
+}
+
+.section-header {
+  font-size: 38px;
+  display: block;
+}
+
+.section-header::before {
+  content: '';
+  width: 70px;
+  height: 50px;
+  border: 2px solid black;
+  position: absolute;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+@media (min-width: 700px) {
+  .menu {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1250px) {
+  .tutorials {
+    height: 60vh;
+  }
+  .contact-wrapper {
+    width: 80vw;
+    height: 70vw;
+    margin: 30vw auto 10px auto;
+  }
+  .menu {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contact-wrapper {
+    width: 70vw;
+    height: 50vw;
+    padding: 0;
+  }
+  .menu {
+    width: 20vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */
